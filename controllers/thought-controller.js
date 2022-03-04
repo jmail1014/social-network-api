@@ -2,7 +2,7 @@ const { process_params } = require("express/lib/router");
 const { User, Thought } = require("../models");
 
 const thoughtController = {
-  getAllThoughts(req, res) {
+  getAllThought(req, res) {
     Thought.find({})
       .poplulate({
         path: "reactions",
@@ -43,7 +43,7 @@ const thoughtController = {
       })
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No user found with this id!" });
+          res.status(404).json({ message: "No user found with that id!" });
           return;
         }
         res.json(dbThoughtData);
@@ -81,7 +81,7 @@ const thoughtController = {
       })
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No user found with this id!" });
+          res.status(404).json({ message: "No user found with that id!" });
           return;
         }
         res.json(dbUserData);
@@ -99,7 +99,7 @@ const thoughtController = {
       .select("-_v")
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No thoughts with this id!" });
+          res.status(404).json({ message: "No thoughts with that id!" });
           return;
         }
         res.json(dbThoughtData);
@@ -115,7 +115,7 @@ const thoughtController = {
     )
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No thoughts with this id!" });
+          res.status(404).json({ message: "No thoughts with that id!" });
           return;
         }
         res.json(dbThoughtData);
