@@ -14,4 +14,4 @@ These are RESTful APIs for a social network.
 - Moment
 
 ## Video Walkthrough (demonstrating functionality):
-** too large to embed
+* too large to embed
