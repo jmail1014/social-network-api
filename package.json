@@ -2,10 +2,8 @@
   "name": "social-network-api",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
+  "main": "index.js",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jmail1014/social-network-api.git"
