@@ -3,13 +3,13 @@ const { User, Thought } = require("../models");
 const thoughtController = {
   getAllThought(req, res) {
     Thought.find({})
-      .poplulate({
+      .populate({
         path: "reactions",
         select: "-_v",
       })
       .select("-_v")
       .sort({ _id: -1 })
-      .then((dbThoughtData) => req.json(dbThoughtData))
+      .then((dbThoughtData) => res.json(dbThoughtData))
       .catch((err) => {
         console.log(err);
         res.sendStatus(400);
@@ -18,13 +18,13 @@ const thoughtController = {
 
   getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.id })
-      .poplulate({
+      .populate({
         path: "reactions",
         select: "-_v",
       })
       .select("-_v")
       .sort({ _id: -1 })
-      .then((dbThoughtData) => req.json(dbThoughtData))
+      .then((dbThoughtData) => res.json(dbThoughtData))
       .catch((err) => {
         console.log(err);
         res.sendStatus(400);
